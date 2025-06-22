@@ -298,8 +298,8 @@ footer .copyright p {
 }
 
 #hero p {
-    color: #28a745; /* Changed to green */
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 2px rgba(0,0,0,0.7); /* Black outline and slight shadow */
+    color: #FFFFFF; /* White text */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* 1px black outline */
     font-size: 1.1rem;
     margin-bottom: 30px;
     max-width: 700px;
@@ -817,19 +817,24 @@ section:not(#hero) .container { /* Apply to sections that need centered content 
     #matchmaking-tool form .button {
         grid-column: 1 / -1; /* Full width on mobile */
     }
-    .social-media-links { /* Ensure icons center or align left on mobile if they wrap */
-        width: 100%; /* Ensure the container takes full width for centering to be effective */
-        justify-content: center;
+    /* Ensure the 'Connect With Us' column and other footer columns center their text/inline-block content on mobile */
+    footer div {
+        text-align: center;
+    }
+    .social-media-links {
+        display: inline-flex; /* Allows the parent's text-align:center to center this block */
+        justify-content: center; /* Centers the icons within this flex container */
+        /* width: 100%; /* Not needed if using inline-flex and parent text-align */
     }
 }
 
 /* Social Media Icons in Footer */
 .social-media-links {
     margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap; /* Allow icons to wrap on very small screens if needed */
-    justify-content: flex-start; /* Align to start of the 'Connect with Us' block */
-    gap: 15px; /* Spacing between icons */
+    display: flex; /* Base display for desktop, overridden by inline-flex for mobile */
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Default for desktop, overridden by center for mobile */
+    gap: 15px;
 }
 
 .social-media-links a {
