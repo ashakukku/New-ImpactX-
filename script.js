@@ -84,6 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
                          menuToggle.setAttribute('aria-expanded', 'false');
                          menuToggle.innerHTML = '&#9776;';
                     }
+                } else {
+                    // Log if the target element for a hash link is not found on the current page
+                    console.warn(`Smooth scroll target '${targetId}' not found on page ${window.location.pathname}`);
                 }
             }
         });
