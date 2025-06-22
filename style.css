@@ -567,14 +567,14 @@ footer .copyright p {
         align-items: flex-start;
     }
 
-    header nav ul {
+    header nav ul#main-menu { /* Targeting #main-menu specifically */
         flex-direction: column;
         width: 100%;
         display: none; /* Hidden by default, toggled by JS */
         margin-top: 10px;
     }
 
-    header nav ul.active { /* Class added by JS to show menu */
+    header nav ul#main-menu.active { /* Targeting #main-menu.active specifically */
         display: flex;
     }
 
