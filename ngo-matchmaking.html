@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Matchmaking - ImpactX Bridge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/">ImpactX Bridge</a>
+            </div>
+            <button class="menu-toggle" aria-label="Open Menu" aria-expanded="false">&#9776;</button>
+            <ul id="main-menu">
+                <li><a href="/#dashboard-preview">Dashboard</a></li>
+                <li><a href="/#pilot">Pilot Program</a></li>
+                <li><a href="ngo-matchmaking.html" class="active">NGO Matchmaking</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="/#contact">Contact Us</a></li>
+            </ul>
+            <div class="cta-nav">
+                <a href="/#ready-to-join" class="button">Get Started</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="matchmaking-tool">
+            <div class="container">
+                <h1>NGO Matchmaking</h1>
+                <p>Discover grassroots NGOs aligned with your CSR goals. Use the filters below to find potential partners.</p>
+
+                <form id="filter-form">
+                    <div>
+                        <label for="cause">Cause:</label>
+                        <select name="cause" id="cause">
+                            <option value="">All Causes</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="education">Education</option>
+                            <option value="environment">Environment</option>
+                            <option value="livelihoods">Livelihoods</option>
+                            <!-- Add more causes as needed -->
+                        </select>
+                    </div>
+                    <div>
+                        <label for="region">Region:</label>
+                        <select name="region" id="region">
+                            <option value="">All Regions</option>
+                            <option value="kerala">Kerala</option>
+                            <option value="karnataka">Karnataka</option>
+                            <option value="tamil-nadu">Tamil Nadu</option>
+                            <option value="andhra-pradesh">Andhra Pradesh</option>
+                            <!-- Add more regions as needed -->
+                        </select>
+                    </div>
+                    <button type="submit" class="button">Filter NGOs</button>
+                </form>
+
+                <div id="results-area">
+                    <h2>Results</h2>
+                    <p class="results-summary">Showing 2 NGOs. (Example data)</p>
+                    <!-- Example NGO Card Structure (to be dynamically populated or shown as example) -->
+                    <div class="ngo-card">
+                        <h3>Healthcare For All</h3>
+                        <p><strong>Cause:</strong> Healthcare</p>
+                        <p><strong>Region:</strong> Karnataka</p>
+                        <p>Dedicated to providing accessible healthcare services and medical camps in remote villages of Karnataka. Focus on maternal and child health.</p>
+                        <a href="#" class="button-secondary">View Profile (Coming Soon)</a>
+                    </div>
+                    <div class="ngo-card">
+                        <h3>ChildJoy Org</h3>
+                        <p><strong>Cause:</strong> Education</p>
+                        <p><strong>Region:</strong> Andhra Pradesh</p>
+                        <p>Working to improve educational outcomes for underprivileged children through after-school programs and digital literacy initiatives.</p>
+                        <a href="#" class="button-secondary">View Profile (Coming Soon)</a>
+                    </div>
+                     <div class="ngo-card">
+                        <h3>Green Earth Initiative</h3>
+                        <p><strong>Cause:</strong> Environment</p>
+                        <p><strong>Region:</strong> Tamil Nadu</p>
+                        <p>Focused on afforestation projects, promoting sustainable agriculture, and conducting environmental awareness campaigns in local communities.</p>
+                        <a href="#" class="button-secondary">View Profile (Coming Soon)</a>
+                    </div>
+                </div>
+                <div class="cta-bottom">
+                    <p>Can't find what you're looking for or want to get listed?</p>
+                    <a href="/#ready-to-join" class="button">Apply as NGO</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact-matchmaking"> <!-- Changed ID to avoid conflict -->
+        <div class="container">
+            <div>
+                <h3>ImpactX Bridge</h3>
+                <p>Connecting corporate social responsibility teams with high-impact grassroots NGOs.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/#pilot">Pilot Program</a></li>
+                    <li><a href="/#solution">Our Solution</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="ngo-matchmaking.html">NGO Matchmaking Tool</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Connect With Us</h4>
+                <p><a href="mailto:connect@impactxbridge.com">connect@impactxbridge.com</a></p>
+            </div>
+            <div class="copyright">
+                <p>© 2025 ImpactX Bridge. All rights reserved.</p>
+                <p><a href="terms-of-use.html">Terms of Use</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,844 @@
+/* Global Resets and Base Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Modern, readable sans-serif */
+    line-height: 1.6;
+    color: #333; /* Dark gray for text */
+    background-color: #f9f9f9; /* Light gray background */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff; /* Primary Blue */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* Modern, clean heading font */
+    margin-bottom: 0.75em;
+    line-height: 1.2;
+    color: #1a237e; /* Darker, trustworthy blue for headings */
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1em;
+}
+
+ul, ol {
+    list-style-position: inside;
+    margin-bottom: 1em;
+    padding-left: 1.5em;
+}
+
+blockquote {
+    border-left: 4px solid #007bff; /* Primary Blue */
+    padding-left: 1em;
+    margin: 1.5em 0;
+    font-style: italic;
+    color: #555;
+}
+
+/* Utility Classes */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6f00; /* Vibrant Orange Accent */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #e65100; /* Darker orange */
+    text-decoration: none;
+    color: #fff;
+}
+
+.button-secondary {
+    background-color: #007bff; /* Primary Blue */
+}
+
+.button-secondary:hover {
+    background-color: #0056b3; /* Darker Blue */
+}
+
+/* Header & Navigation */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header .logo a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1a237e; /* Dark Blue */
+    text-decoration: none;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #333;
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: #007bff; /* Primary Blue */
+    text-decoration: none;
+}
+
+header nav ul li a::after { /* Underline effect on hover/active */
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after,
+header nav ul li a.active::after {
+    width: 100%;
+}
+
+
+header .cta-nav .button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+/* Mobile Menu Styles (Placeholder for JS interaction) */
+.menu-toggle {
+    display: none; /* Hidden by default, shown on mobile */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Sections Basic Styling */
+section {
+    padding: 40px 0;
+}
+
+section:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Footer */
+footer {
+    background-color: #1a237e; /* Dark Blue */
+    color: #e0e0e0; /* Light gray text */
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: left;
+}
+
+footer div {
+    flex: 1;
+    min-width: 200px; /* Ensure columns don't get too squished */
+}
+
+footer h3, footer h4 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 8px;
+}
+
+footer ul li a {
+    color: #b0bec5; /* Lighter shade for links */
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+footer .copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #4a4e69; /* Slightly lighter border */
+    font-size: 0.9em;
+}
+
+footer .copyright p {
+    margin-bottom: 5px;
+}
+
+
+/* Specific Page Sections - Homepage */
+#hero {
+    background-color: #e3f2fd; /* Light blue tint */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#hero h1 {
+    color: #1a237e; /* Dark Blue */
+}
+
+#hero p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#hero .button {
+    margin: 0 10px;
+}
+
+#pilot-metrics {
+    text-align: center;
+}
+
+#pilot-metrics .stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+#pilot-metrics .stat-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    flex: 1;
+    min-width: 250px; /* Ensure cards are readable */
+    text-align: center;
+}
+
+#pilot-metrics .stat-card h3 {
+    color: #007bff; /* Primary Blue */
+    margin-bottom: 10px;
+}
+
+#pilot-metrics .stat-card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#solution {
+    text-align: center;
+}
+
+#solution .solution-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+#solution .solution-column {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    flex: 1;
+    min-width: 300px; /* Adjust as needed */
+    text-align: left;
+}
+
+#solution .solution-column h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#solution .solution-column ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+#solution .solution-column ul li {
+    margin-bottom: 10px;
+}
+
+#how-it-works ol {
+    list-style: none;
+    counter-reset: steps-counter;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#how-it-works ol li {
+    counter-increment: steps-counter;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: relative;
+    flex-basis: calc(33.333% - 20px); /* Three columns with gap */
+    margin: 10px;
+    text-align: center;
+}
+
+#how-it-works ol li::before {
+    content: counter(steps-counter);
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff6f00; /* Accent color */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 15px;
+}
+
+#how-it-works ol li h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+
+#how-it-works .workflow-graphic { /* Placeholder for actual graphic */
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: #007bff;
+}
+
+#ready-to-join .join-columns {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+#ready-to-join .join-column {
+    background-color: #e3f2fd; /* Light blue tint */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+#ready-to-join .join-column h3 {
+    color: #1a237e;
+}
+#ready-to-join .join-column h4 {
+    color: #007bff;
+    font-size: 1.1rem;
+    margin-top: 0;
+}
+
+
+/* FAQ Page */
+#faq-main .faq-item {
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+}
+
+#faq-main .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a237e;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#faq-main .faq-question::after { /* Plus/Minus icon */
+    content: '+';
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+#faq-main .faq-question.active::after {
+    content: '−';
+}
+
+#faq-main .faq-answer {
+    padding: 0 20px 15px 20px;
+    display: none; /* Hidden by default, shown by JS */
+    border-top: 1px solid #eee;
+}
+
+#faq-main .faq-answer p {
+    margin-bottom: 0.5em;
+}
+
+/* NGO Matchmaking Page */
+#matchmaking-tool form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+#matchmaking-tool form div {
+    flex: 1;
+    min-width: 200px;
+}
+
+#matchmaking-tool form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+#matchmaking-tool form select,
+#matchmaking-tool form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#matchmaking-tool form .button {
+    align-self: flex-end; /* Align button with bottom of inputs */
+}
+
+#results-area .ngo-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    margin-bottom: 20px;
+}
+
+#results-area .ngo-card h3 {
+    color: #007bff;
+    margin-top: 0;
+}
+
+#results-area .results-summary {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+#matchmaking-tool .cta-bottom {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    background-color: #e3f2fd;
+    border-radius: 8px;
+}
+
+/* Terms & Privacy Pages */
+#terms-main article,
+#privacy-main article {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+#terms-main h2,
+#privacy-main h2 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.3em;
+}
+#terms-main h2:first-child,
+#privacy-main h2:first-child {
+    margin-top: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none; /* Hidden by default, toggled by JS */
+        margin-top: 10px;
+    }
+
+    header nav ul.active { /* Class added by JS to show menu */
+        display: flex;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    header nav ul li a {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+    header nav ul li a::after { /* Disable underline effect on mobile for cleaner look */
+        display: none;
+    }
+
+
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+    header .cta-nav {
+        margin-top: 10px;
+        width: 100%;
+    }
+    header .cta-nav .button {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    #hero {
+        padding: 40px 15px;
+    }
+    #hero .button {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+    }
+
+    #solution .solution-columns,
+    #how-it-works ol,
+    #ready-to-join .join-columns {
+        flex-direction: column;
+    }
+    #how-it-works ol li {
+        flex-basis: 100%; /* Full width on mobile */
+    }
+
+
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    footer div {
+        margin-bottom: 20px;
+        min-width: auto;
+        width: 100%; /* Make footer sections full width on mobile */
+    }
+    footer div:last-child {
+        margin-bottom: 0;
+    }
+    footer ul {
+        padding-left: 0; /* Center list items */
+    }
+}
+
+/* Add this to ensure HTML and Body take full height for sticky footer */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto; /* Prevent main from shrinking smaller than its content */
+}
+
+footer {
+    flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+/* Re-add .container to sections for consistent padding and max-width */
+section > .container,
+#hero > .container, /* Hero might not need a .container if full-width bg is desired */
+#faq-main.container, /* If #faq-main itself is the container */
+#matchmaking-tool.container,
+#terms-main.container,
+#privacy-main.container {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding: already handled by section or specific element */
+}
+
+/* Adjusting sections to use the .container correctly */
+/* Remove padding from section if .container inside handles it */
+section {
+    padding: 40px 0; /* Vertical padding on section */
+}
+/* The .container inside section will handle horizontal padding/centering */
+/* Example for hero if it has a full-width background but centered content */
+#hero {
+    padding: 60px 0; /* Full width background */
+    text-align: center;
+}
+#hero > div { /* Assuming direct child div is the content wrapper */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Fix footer layout issue */
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .copyright {
+   grid-column: 1 / -1; /* Make copyright span all columns */
+}
+
+/* General section content centering if not already handled */
+section:not(#hero) .container { /* Apply to sections that need centered content */
+    /* This is already default for .container, so this might be redundant */
+}
+
+/* Refine How it Works section for responsiveness */
+#how-it-works ol {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+#how-it-works ol li {
+    margin: 0; /* Remove previous margin if grid handles gap */
+     /* flex-basis is not needed with grid */
+}
+
+/* Refine Solution section for responsiveness */
+#solution .solution-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+#solution .solution-column {
+    min-width: 0; /* Override previous min-width if grid handles sizing */
+}
+
+/* Refine Pilot Metrics for responsiveness */
+#pilot-metrics .stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+#pilot-metrics .stat-card {
+    min-width: 0;
+}
+
+/* Refine Ready to Join for responsiveness */
+#ready-to-join .join-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+#ready-to-join .join-column {
+    min-width: 0;
+}
+#matchmaking-tool form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    align-items: flex-end;
+}
+#matchmaking-tool form .button {
+    grid-column: span 1; /* Default, adjust if needed */
+    /* Potentially make it span full width on small screens if it looks better */
+}
+
+@media (max-width: 768px) {
+    #matchmaking-tool form .button {
+        grid-column: 1 / -1; /* Full width on mobile */
+    }
+}
+
+
+/* Ensure body and html are 100% height for sticky footer */
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+}
+footer {
+    flex-shrink: 0;
+}
+
+
+/* Adding container class to HTML for sections that need it */
+/* This is a structural change, will need to update HTML files if I proceed with this. */
+/* For now, I will assume the sections already have a .container div or are full-width by design. */
+
+/* Let's ensure the navigation links and logo are properly aligned with flexbox */
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* ... other styles ... */
+}
+
+header nav ul {
+    display: flex; /* This was already there, ensure it's not overridden */
+    align-items: center; /* Vertically align items in the nav list */
+    /* ... other styles ... */
+}
+
+/* Final check for footer column wrapping and copyright */
+footer .container {
+    /* display: grid; is good */
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); is good */
+    /* gap: 20px; is good */
+}
+
+footer .copyright {
+    grid-column: 1 / -1; /* Correct for grid */
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #4a4e69;
+}
+
+/* Adjusting padding for sections to avoid double padding if .container is used */
+/* If a section has a direct child .container, the section itself might not need horizontal padding. */
+/*
+section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+*/
+/* This is fine. The .container class itself doesn't add vertical padding, just horizontal constraints. */
+
+/* Add Google Fonts import at the top of the CSS */
+/* This should ideally be the very first thing or loaded in HTML head for performance */
+/* For now, adding it here for completeness of the CSS block */
+
+/*
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+*/
+/* I will assume this @import is handled in the HTML head for better practice,
+   but the font-family declarations will use these fonts. */
