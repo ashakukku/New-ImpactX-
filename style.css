@@ -817,7 +817,30 @@ section:not(#hero) .container { /* Apply to sections that need centered content 
     #matchmaking-tool form .button {
         grid-column: 1 / -1; /* Full width on mobile */
     }
+    .social-media-links { /* Ensure icons center or align left on mobile if they wrap */
+        justify-content: center; /* Or flex-start if preferred */
+    }
 }
+
+/* Social Media Icons in Footer */
+.social-media-links {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Allow icons to wrap on very small screens if needed */
+    justify-content: flex-start; /* Align to start of the 'Connect with Us' block */
+    gap: 15px; /* Spacing between icons */
+}
+
+.social-media-links a {
+    color: #b0bec5; /* Footer link color */
+    font-size: 1.6rem; /* Icon size */
+    transition: color 0.3s ease;
+}
+
+.social-media-links a:hover {
+    color: #ffffff; /* Footer link hover color */
+}
+
 
 /* Styling for the banner image in the dashboard section */
 .dashboard-banner-img {
