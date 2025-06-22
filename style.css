@@ -854,21 +854,24 @@ footer .container {
     /* gap: 20px; is good */
 }
 
-/* Styling for the full logo in the footer */
-.footer-logo-container {
-    grid-column: 1 / -1; /* Span all columns in the footer grid */
-    text-align: center;
-    padding: 20px 0; /* Add some vertical spacing */
+/* Styling for the full logo in the footer (new class: footer-logo-item) */
+.footer-logo-item {
+    grid-column: 1 / -1; /* Span all columns in the footer grid, making it a new row */
+    text-align: right; /* Align image to the right by default (for desktop) */
+    padding: 20px 0;
 }
 
 .footer-full-logo-img {
     max-width: 220px; /* Default max-width for larger screens */
     height: auto;   /* Maintain aspect ratio */
-    display: inline-block; /* Allows text-align:center to work if not already block */
+    display: inline-block;
 }
 
-/* Responsive adjustments for footer logo if needed */
+/* Responsive adjustments for footer logo */
 @media (max-width: 768px) {
+    .footer-logo-item {
+        text-align: center; /* Center logo on smaller screens */
+    }
     .footer-full-logo-img {
         max-width: 180px; /* Slightly smaller on tablets/mobile */
     }
@@ -883,7 +886,7 @@ footer .container {
 footer .copyright {
     grid-column: 1 / -1; /* Correct for grid */
     text-align: center;
-    margin-top: 30px;
+    margin-top: 30px; /* Copyright margin might need adjustment if logo is directly above */
     padding-top: 20px;
     border-top: 1px solid #4a4e69;
 }
