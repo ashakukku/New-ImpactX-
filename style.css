@@ -570,12 +570,12 @@ footer .copyright p {
     header nav ul#main-menu { /* Targeting #main-menu specifically */
         flex-direction: column;
         width: 100%;
-        display: none; /* Hidden by default, toggled by JS */
+        display: none !important; /* Hidden by default, toggled by JS - FORCED HIDDEN */
         margin-top: 10px;
     }
 
     header nav ul#main-menu.active { /* Targeting #main-menu.active specifically */
-        display: flex;
+        display: flex !important; /* Ensure this overrides the display:none !important */
     }
 
     header nav ul li {
