@@ -852,12 +852,28 @@ footer .container {
     /* display: grid; is good */
     /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); is good */
     /* gap: 20px; is good */
+    align-items: start; /* Align items to the start of their grid area */
 }
+
+@media (min-width: 992px) {
+    footer .container {
+        grid-template-columns: 1.5fr 1.5fr 1.5fr 1fr; /* 3 content columns, 1 logo column */
+    }
+}
+/* Make .footer-logo-item a flex container for alignment on desktop */
+@media (min-width: 769px) { /* Apply from tablet upwards for better control */
+    .footer-logo-item {
+        display: flex;
+        justify-content: flex-end; /* Align logo to the right within its cell */
+        align-items: center; /* Vertically center logo in its cell */
+    }
+}
+
 
 /* Styling for the full logo in the footer (new class: footer-logo-item) */
 .footer-logo-item {
-    grid-column: 1 / -1; /* Span all columns in the footer grid, making it a new row */
-    text-align: right; /* Align image to the right by default (for desktop) */
+    /* grid-column: 1 / -1; /* REMOVED - it's now a standard grid item */
+    text-align: center; /* Default to center for mobile when it stacks */
     padding: 20px 0;
 }
 
