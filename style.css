@@ -818,7 +818,8 @@ section:not(#hero) .container { /* Apply to sections that need centered content 
         grid-column: 1 / -1; /* Full width on mobile */
     }
     .social-media-links { /* Ensure icons center or align left on mobile if they wrap */
-        justify-content: center; /* Or flex-start if preferred */
+        width: 100%; /* Ensure the container takes full width for centering to be effective */
+        justify-content: center;
     }
 }
 
