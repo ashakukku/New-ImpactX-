@@ -298,8 +298,8 @@ footer .copyright p {
 }
 
 #hero p {
-    color: #555555; /* Medium-dark gray */
-    text-shadow: 0 0 4px #FFFFFF, 0 0 2px #FFFFFF; /* Soft white glow for readability */
+    color: #FFFFFF; /* White text */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* 1px black outline */
     font-size: 1.1rem;
     margin-bottom: 30px;
     max-width: 700px;
