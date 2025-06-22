@@ -819,6 +819,16 @@ section:not(#hero) .container { /* Apply to sections that need centered content 
     }
 }
 
+/* Styling for the banner image in the dashboard section */
+.dashboard-banner-img {
+    width: 100%; /* Scale with container width */
+    max-width: 1000px; /* Max size on larger screens, adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* To allow margin auto for centering */
+    margin: 20px auto; /* Top/bottom margin, and horizontal centering */
+    /* border: 1px solid #ccc; /* Optional: if a border is still desired */
+}
+
 
 /* Ensure body and html are 100% height for sticky footer */
 html {
