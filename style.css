@@ -132,6 +132,16 @@ header .logo a {
     font-weight: bold;
     color: #1a237e; /* Dark Blue */
     text-decoration: none;
+    display: flex; /* For aligning image and text */
+    align-items: center; /* Vertically align image and text */
+}
+
+/* Styling for the logo image itself */
+.header-logo-img {
+    height: 30px; /* Adjust as needed, e.g., 30px or 40px */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 8px; /* Space between logo image and text */
+    vertical-align: middle; /* Fallback if flex isn't enough, or for older browser interpretation */
 }
 
 header nav ul {
