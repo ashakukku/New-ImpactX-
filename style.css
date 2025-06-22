@@ -428,14 +428,14 @@ footer .copyright p {
 
 
 /* FAQ Page */
-#faq-main .faq-item {
+#faq-on-index .faq-item { /* Updated ID from #faq-main */
     background-color: #ffffff;
     margin-bottom: 10px;
     border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.07);
 }
 
-#faq-main .faq-question {
+#faq-on-index .faq-question { /* Updated ID from #faq-main */
     width: 100%;
     background: none;
     border: none;
@@ -451,23 +451,23 @@ footer .copyright p {
     align-items: center;
 }
 
-#faq-main .faq-question::after { /* Plus/Minus icon */
+#faq-on-index .faq-question::after { /* Plus/Minus icon */ /* Updated ID from #faq-main */
     content: '+';
     font-size: 1.5rem;
     color: #007bff;
 }
 
-#faq-main .faq-question.active::after {
+#faq-on-index .faq-question.active::after { /* Updated ID from #faq-main */
     content: '−';
 }
 
-#faq-main .faq-answer {
+#faq-on-index .faq-answer { /* Updated ID from #faq-main */
     padding: 0 20px 15px 20px;
     display: none; /* Hidden by default, shown by JS */
     border-top: 1px solid #eee;
 }
 
-#faq-main .faq-answer p {
+#faq-on-index .faq-answer p { /* Updated ID from #faq-main */
     margin-bottom: 0.5em;
 }
 
