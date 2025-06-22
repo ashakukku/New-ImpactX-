@@ -138,7 +138,7 @@ header .logo a {
 
 /* Styling for the logo image itself */
 .header-logo-img {
-    height: 30px; /* Adjust as needed, e.g., 30px or 40px */
+    height: 40px; /* Increased from 30px, adjust as needed */
     width: auto; /* Maintain aspect ratio */
     margin-right: 8px; /* Space between logo image and text */
     vertical-align: middle; /* Fallback if flex isn't enough, or for older browser interpretation */
@@ -615,6 +615,11 @@ footer .copyright p {
         display: none;
     }
 
+    /* Adjust logo size for mobile */
+    .header-logo-img {
+        height: 35px; /* Slightly smaller logo on mobile */
+    }
+
     /* Ensure the CTA button item in menu also behaves well on mobile */
     header nav ul li.menu-cta-button-item {
         padding: 10px 0; /* Add some padding around the button */
@@ -848,6 +853,32 @@ footer .container {
     /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); is good */
     /* gap: 20px; is good */
 }
+
+/* Styling for the full logo in the footer */
+.footer-logo-container {
+    grid-column: 1 / -1; /* Span all columns in the footer grid */
+    text-align: center;
+    padding: 20px 0; /* Add some vertical spacing */
+}
+
+.footer-full-logo-img {
+    max-width: 220px; /* Default max-width for larger screens */
+    height: auto;   /* Maintain aspect ratio */
+    display: inline-block; /* Allows text-align:center to work if not already block */
+}
+
+/* Responsive adjustments for footer logo if needed */
+@media (max-width: 768px) {
+    .footer-full-logo-img {
+        max-width: 180px; /* Slightly smaller on tablets/mobile */
+    }
+}
+@media (max-width: 480px) {
+    .footer-full-logo-img {
+        max-width: 150px; /* Even smaller on very small mobile screens */
+    }
+}
+
 
 footer .copyright {
     grid-column: 1 / -1; /* Correct for grid */
