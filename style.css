@@ -138,7 +138,7 @@ header .logo a {
 
 /* Styling for the logo image itself */
 .header-logo-img {
-    height: 30px; /* Adjust as needed, e.g., 30px or 40px */
+    height: 40px; /* Increased from 30px, adjust as needed */
     width: auto; /* Maintain aspect ratio */
     margin-right: 8px; /* Space between logo image and text */
     vertical-align: middle; /* Fallback if flex isn't enough, or for older browser interpretation */
@@ -613,6 +613,11 @@ footer .copyright p {
     }
     header nav ul li a::after { /* Disable underline effect on mobile for cleaner look */
         display: none;
+    }
+
+    /* Adjust logo size for mobile */
+    .header-logo-img {
+        height: 35px; /* Slightly smaller logo on mobile */
     }
 
     /* Ensure the CTA button item in menu also behaves well on mobile */
