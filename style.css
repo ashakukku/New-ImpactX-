@@ -348,22 +348,50 @@ footer .copyright p {
     text-align: center;
 }
 
-#solution .solution-columns {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 30px;
+/* General styling for two-column sections like 'Our Solution' and 'Pilot Opportunity' */
+/* This replaces the old #solution .solution-columns and #solution .solution-column rules */
+.solution-columns {
+    display: grid;
+    gap: 30px; /* Standardized gap */
     margin-top: 20px;
 }
 
-#solution .solution-column {
+.solution-column {
     background-color: #ffffff;
-    padding: 30px;
+    padding: 25px; /* Default padding, slightly reduced for better mobile fit */
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    flex: 1;
-    min-width: 300px; /* Adjust as needed */
     text-align: left;
+    min-width: 0; /* Allows columns to shrink properly in a grid */
+}
+
+/* Desktop: Explicit two-column layout for .solution-columns */
+@media (min-width: 769px) { /* Tablet and above */
+    /* Applied directly to .solution-columns if it's always two columns,
+       or scope to specific parent sections if .solution-columns can have varied column counts.
+       For #pilot and #solution, we want two columns.
+    */
+    #solution .solution-columns,
+    #pilot .solution-columns {
+        grid-template-columns: 1fr 1fr; /* Force two equal columns */
+    }
+}
+
+/* Mobile: Stack columns and adjust spacing */
+@media (max-width: 768px) {
+    .solution-columns { /* General rule for all .solution-columns on mobile */
+        grid-template-columns: 1fr; /* Stack to a single column */
+        gap: 0px; /* Remove gap when stacked, use margin on items instead */
+    }
+
+    .solution-column {
+        padding: 20px; /* Reduced padding for mobile */
+        margin-bottom: 20px; /* Space between stacked columns */
+    }
+
+    .solution-columns > .solution-column:last-child {
+        margin-bottom: 0; /* No margin for the last stacked column */
+    }
 }
 
 #solution .solution-column h3 {
@@ -666,7 +694,7 @@ footer .copyright p {
         width: 80%;
     }
 
-    #solution .solution-columns,
+    /* #solution .solution-columns, /* Removed from this group, handled by its own grid mobile styles */
     #how-it-works ol,
     #ready-to-join .join-columns {
         flex-direction: column;
@@ -771,16 +799,6 @@ section:not(#hero) .container { /* Apply to sections that need centered content 
 #how-it-works ol li {
     margin: 0; /* Remove previous margin if grid handles gap */
      /* flex-basis is not needed with grid */
-}
-
-/* Refine Solution section for responsiveness */
-#solution .solution-columns {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-#solution .solution-column {
-    min-width: 0; /* Override previous min-width if grid handles sizing */
 }
 
 /* Refine Pilot Metrics for responsiveness */
