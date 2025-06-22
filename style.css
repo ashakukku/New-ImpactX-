@@ -180,6 +180,19 @@ header .cta-nav .button {
     font-size: 0.9rem;
 }
 
+/* Style for the CTA button when it's part of the main menu list on desktop */
+header nav ul li.menu-cta-button-item {
+    margin-left: auto; /* Push this item to the far right */
+    padding-left: 20px; /* Add some space from the preceding nav item if any, or use margin-left on .button itself */
+}
+header nav ul li.menu-cta-button-item a.button {
+    /* Desktop specific styles for the button if needed, e.g., vertical alignment.
+       The .button class already provides most styling.
+       The `align-items: center;` on the parent `ul` should handle vertical alignment.
+    */
+}
+
+
 /* Mobile Menu Styles (Placeholder for JS interaction) */
 .menu-toggle {
     display: none; /* Hidden by default, shown on mobile */
@@ -590,6 +603,17 @@ footer .copyright p {
     }
     header nav ul li a::after { /* Disable underline effect on mobile for cleaner look */
         display: none;
+    }
+
+    /* Ensure the CTA button item in menu also behaves well on mobile */
+    header nav ul li.menu-cta-button-item {
+        padding: 10px 0; /* Add some padding around the button */
+        text-align: center; /* Center the button if it's not full width */
+    }
+    header nav ul li.menu-cta-button-item a.button {
+        display: inline-block; /* Ensure button class takes effect */
+        width: auto; /* Allow button to size to its content or a set width */
+        /* Potentially make it full width if desired: width: 90%; margin: 0 auto; */
     }
 
 
