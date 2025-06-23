@@ -922,8 +922,8 @@ section:not(#hero) .container { /* Apply to sections that need centered content 
 }
 
 .founder-profile-pic {
-    width: 130px;
-    height: 130px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%; /* Circular profile pictures */
     object-fit: cover; /* Ensure image covers the area well, might crop if not square */
     margin-bottom: 15px;
