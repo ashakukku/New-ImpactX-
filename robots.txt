@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 10 # Optional: Adjust based on server capacity
+
+User-agent: DuckDuckBot
+Allow: /
+
 Sitemap: https://www.impactxbridge.com/sitemap.xml
