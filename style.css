@@ -616,7 +616,18 @@ footer .copyright p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Added for hover effect */
 }
+
+#faq-on-index .faq-question:hover {
+    background-color: #f5f5f5; /* Light gray background on hover */
+    /* color: #D32F2F; */ /* Optional: Change text color to accent red on hover */
+}
+
+/* Style for the icon on hover, if desired to change its color too */
+/* #faq-on-index .faq-question:hover::after {
+    color: #B71C1C; /* Darker red or same as text hover color */
+/* } */
 
 #faq-on-index .faq-question::after { /* Plus/Minus icon */ /* Updated ID from #faq-main */
     content: '+';
@@ -913,6 +924,12 @@ section:not(#hero) .container { /* Apply to sections that need centered content 
 #how-it-works ol li {
     margin: 0; /* Remove previous margin if grid handles gap */
      /* flex-basis is not needed with grid */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added for hover effect */
+}
+
+#how-it-works ol li:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12); /* Enhanced shadow */
 }
 
 /* Refine Pilot Metrics for responsiveness */
@@ -1382,3 +1399,16 @@ section {
         margin: 20px 0;
     }
 }
+
+/* --- START: Hover Effects for .join-column --- */
+/* Ensures smooth transition for hover effects on .join-column */
+#ready-to-join .join-column {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for .join-column */
+#ready-to-join .join-column:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12); /* Enhanced shadow */
+}
+/* --- END: Hover Effects for .join-column --- */
