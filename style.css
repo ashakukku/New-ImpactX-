@@ -1416,6 +1416,41 @@ section {
 /* Disclaimer Text Styling */
 .disclaimer-text {
     font-size: 0.85em;         /* Slightly smaller than normal paragraph text */
+}
+
+/* Join the Movement Section */
+#join-the-movement {
+    /* This section will get default alternating background or white.
+       If a specific background (e.g., a brand color accent) is desired:
+       background-color: #your-color;
+       color: #fff; /* if using a dark background */
+    */
+    padding: 60px 0; /* More vertical padding for emphasis as a closing section */
+    text-align: center;
+}
+
+#join-the-movement h2 {
+    margin-bottom: 20px; /* More space after heading */
+}
+
+#join-the-movement p {
+    font-size: 1.1em;   /* Slightly larger paragraph text */
+    margin-bottom: 30px; /* More space before buttons */
+    max-width: 700px;   /* Keep line length readable */
+    margin-left: auto;
+    margin-right: auto;
+    /* If using a dark background for the section, ensure p color contrasts:
+       color: #f0f0f0;
+    */
+}
+
+.cta-buttons-join {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    gap: 20px;       /* Space between buttons */
+}
     font-style: italic;
     color: #777777;           /* Muted gray color */
     text-align: center;        /* Center align if it's a block element */
