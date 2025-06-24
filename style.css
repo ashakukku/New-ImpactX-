@@ -15,8 +15,8 @@ html {
 body {
     font-family: 'Open Sans', sans-serif; /* Modern, readable sans-serif */
     line-height: 1.6;
-    color: #333; /* Dark gray for text */
-    background-color: #f9f9f9; /* Light gray background */
+    color: #333333; /* Dark gray for text - good base */
+    background-color: #ffffff; /* White background as primary */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -34,7 +34,7 @@ img {
 
 a {
     text-decoration: none;
-    color: #007bff; /* Primary Blue */
+    color: #D32F2F; /* Red for links */
 }
 
 a:hover {
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif; /* Modern, clean heading font */
     margin-bottom: 0.75em;
     line-height: 1.2;
-    color: #1a237e; /* Darker, trustworthy blue for headings */
+    color: #212121; /* Very dark gray / Off-black for headings */
 }
 
 h1 { font-size: 2.5rem; }
@@ -64,7 +64,7 @@ ul, ol {
 }
 
 blockquote {
-    border-left: 4px solid #007bff; /* Primary Blue */
+    border-left: 4px solid #D32F2F; /* Red accent for blockquote */
     padding-left: 1em;
     margin: 1.5em 0;
     font-style: italic;
@@ -81,34 +81,118 @@ blockquote {
 
 .button {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #ff6f00; /* Vibrant Orange Accent */
-    color: #fff;
+    padding: 12px 25px; /* Slightly larger padding */
+    background-color: #D32F2F; /* Red for primary buttons */
+    color: #ffffff;
     border: none;
     border-radius: 5px;
-    font-weight: bold;
+    font-weight: 700; /* Bolder font weight */
     text-align: center;
-    transition: background-color 0.3s ease;
+    text-transform: uppercase; /* Uppercase text for more impact */
+    letter-spacing: 0.5px; /* Slight letter spacing */
+    transition: background-color 0.3s ease, transform 0.2s ease;
     cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* Subtle shadow */
 }
 
 .button:hover {
-    background-color: #e65100; /* Darker orange */
+    background-color: #B71C1C; /* Darker Red for hover */
     text-decoration: none;
-    color: #fff;
+    color: #ffffff;
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
 }
 
 .button-secondary {
-    background-color: #007bff; /* Primary Blue */
+    background-color: #616161; /* Darker Medium Gray for secondary buttons */
+    color: #ffffff;
+    padding: 10px 20px; /* Keep secondary slightly smaller or same as original .button */
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .button-secondary:hover {
-    background-color: #0056b3; /* Darker Blue */
+    background-color: #424242; /* Darker Gray for secondary hover */
+    color: #ffffff;
+    transform: translateY(-1px);
 }
+
+
+/* Testimonials Section */
+#testimonials {
+    text-align: center;
+}
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.testimonial-card {
+    background-color: #ffffff; /* White card on potentially gray section bg */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: left;
+    border-left: 5px solid #D32F2F; /* Red accent border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added for hover effect */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #555555;
+}
+.testimonial-card h4 {
+    font-weight: 600;
+    color: #212121;
+    font-size: 1rem;
+    text-align: right;
+}
+
+/* Newsletter Signup Section */
+#newsletter-signup {
+    text-align: center;
+    padding: 40px 20px; /* Ensure padding if it's an odd section and white */
+}
+#newsletter-signup p {
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+#newsletter-form input[type="email"] {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    min-width: 200px; /* Ensure input is not too small */
+}
+#newsletter-form .button {
+    /* Styles inherited from .button, padding already adjusted */
+}
+
 
 /* Header & Navigation */
 header {
-    background-color: #ffffff;
+    background-color: #ffffff; /* White header background */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     padding: 10px 0;
     position: sticky;
@@ -130,7 +214,7 @@ header .logo a {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #1a237e; /* Dark Blue */
+    color: #212121; /* Dark Gray/Off-black for logo text */
     text-decoration: none;
     display: flex; /* For aligning image and text */
     align-items: center; /* Vertically align image and text */
@@ -164,7 +248,7 @@ header nav ul li a {
 
 header nav ul li a:hover,
 header nav ul li a.active {
-    color: #007bff; /* Primary Blue */
+    color: #D32F2F; /* Red for active/hover nav links */
     text-decoration: none;
 }
 
@@ -175,7 +259,7 @@ header nav ul li a::after { /* Underline effect on hover/active */
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #007bff;
+    background-color: #D32F2F; /* Red underline */
     transition: width 0.3s ease;
 }
 
@@ -217,13 +301,25 @@ section {
     padding: 40px 0;
 }
 
-section:nth-child(even) {
-    background-color: #ffffff;
+/* Alternating section backgrounds for contrast */
+section:nth-of-type(even) { /* Using :nth-of-type for more reliability if other elements are between sections */
+    background-color: #f5f5f5; /* Light Gray for alternate sections */
 }
+section:nth-of-type(odd) {
+    background-color: #ffffff; /* White for other sections */
+}
+
+/* Ensure Hero section has a specific background if it's odd and needs to be distinct, or manage via its own ID */
+#hero {
+    /* background-image is already set, ensure no conflict if it's an odd section */
+    /* If #hero is the first section (odd), it will be white by default from above. */
+    /* If a specific color is needed, override here, e.g., background-color: #desired-color; */
+}
+
 
 /* Footer */
 footer {
-    background-color: #1a237e; /* Dark Blue */
+    background-color: #212121; /* Dark Gray/Off-black footer */
     color: #e0e0e0; /* Light gray text */
     padding: 40px 0;
     text-align: center;
@@ -271,7 +367,7 @@ footer .copyright {
     text-align: center;
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px solid #4a4e69; /* Slightly lighter border */
+    border-top: 1px solid #424242; /* Medium gray border in footer */
     font-size: 0.9em;
 }
 
@@ -331,10 +427,16 @@ footer .copyright p {
     flex: 1;
     min-width: 250px; /* Ensure cards are readable */
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added for hover effect */
+}
+
+#pilot-metrics .stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
 
 #pilot-metrics .stat-card h3 {
-    color: #007bff; /* Primary Blue */
+    color: #D32F2F; /* Red for stat card headings */
     margin-bottom: 10px;
 }
 
@@ -363,6 +465,12 @@ footer .copyright p {
     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     text-align: left;
     min-width: 0; /* Allows columns to shrink properly in a grid */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added for hover effect */
+}
+
+.solution-column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
 
 /* Desktop: Explicit two-column layout for .solution-columns */
@@ -395,7 +503,7 @@ footer .copyright p {
 }
 
 #solution .solution-column h3 {
-    color: #007bff;
+    color: #D32F2F; /* Red for solution column headings */
     margin-bottom: 15px;
     text-align: center;
 }
@@ -435,8 +543,8 @@ footer .copyright p {
     content: counter(steps-counter);
     font-size: 1.5em;
     font-weight: bold;
-    color: #fff;
-    background-color: #ff6f00; /* Accent color */
+    color: #ffffff;
+    background-color: #D32F2F; /* Red for step numbers */
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -455,7 +563,7 @@ footer .copyright p {
     text-align: center;
     font-size: 1.5rem;
     margin: 20px 0;
-    color: #007bff;
+    color: #D32F2F; /* Red for workflow graphic text */
 }
 
 #ready-to-join .join-columns {
@@ -467,7 +575,7 @@ footer .copyright p {
 }
 
 #ready-to-join .join-column {
-    background-color: #e3f2fd; /* Light blue tint */
+    background-color: #f5f5f5; /* Light Gray for join column background */
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
@@ -477,10 +585,10 @@ footer .copyright p {
 }
 
 #ready-to-join .join-column h3 {
-    color: #1a237e;
+    color: #212121; /* Dark Gray/Off-black for heading */
 }
 #ready-to-join .join-column h4 {
-    color: #007bff;
+    color: #D32F2F; /* Red for subheading */
     font-size: 1.1rem;
     margin-top: 0;
 }
@@ -502,7 +610,7 @@ footer .copyright p {
     text-align: left;
     font-size: 1.1rem;
     font-weight: 600;
-    color: #1a237e;
+    color: #212121; /* Dark Gray/Off-black for FAQ questions */
     cursor: pointer;
     position: relative;
     display: flex;
@@ -513,7 +621,7 @@ footer .copyright p {
 #faq-on-index .faq-question::after { /* Plus/Minus icon */ /* Updated ID from #faq-main */
     content: '+';
     font-size: 1.5rem;
-    color: #007bff;
+    color: #D32F2F; /* Red for plus/minus icon */
 }
 
 #faq-on-index .faq-question.active::after { /* Updated ID from #faq-main */
@@ -574,10 +682,16 @@ footer .copyright p {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
     margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added for hover effect */
+}
+
+#results-area .ngo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
 
 #results-area .ngo-card h3 {
-    color: #007bff;
+    color: #D32F2F; /* Red for NGO card headings */
     margin-top: 0;
 }
 
@@ -590,7 +704,7 @@ footer .copyright p {
     margin-top: 30px;
     text-align: center;
     padding: 20px;
-    background-color: #e3f2fd;
+    background-color: #f5f5f5; /* Light Gray for CTA bottom background */
     border-radius: 8px;
 }
 
@@ -862,7 +976,7 @@ section:not(#hero) .container { /* Apply to sections that need centered content 
 }
 
 .social-media-links a:hover {
-    color: #ffffff; /* Footer link hover color */
+    color: #D32F2F; /* Red for social icon hover */
 }
 
 
@@ -919,6 +1033,12 @@ section:not(#hero) .container { /* Apply to sections that need centered content 
     background-color: #f9f9f9; /* Light background for each profile card */
     border-radius: 8px;
     box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added for hover effect */
+}
+
+.founder-profile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.10);
 }
 
 .founder-profile-pic {
@@ -945,7 +1065,7 @@ section:not(#hero) .container { /* Apply to sections that need centered content 
 .founder-profile p strong { /* Co-founder title */
     display: block;
     font-weight: 600;
-    color: #007bff; /* Primary blue for title */
+    color: #D32F2F; /* Red for founder title */
     margin-bottom: 0.5em;
 }
 
@@ -961,7 +1081,7 @@ section:not(#hero) .container { /* Apply to sections that need centered content 
 }
 
 .founder-social-links a:hover {
-    color: #007bff; /* Primary blue on hover */
+    color: #D32F2F; /* Red for founder social icon hover */
 }
 
 #about-us-content blockquote { /* Ensure blockquote styling is consistent */
