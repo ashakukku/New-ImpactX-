@@ -178,5 +178,111 @@ document.addEventListener('DOMContentLoaded', () => {
     // Call the function to update navigation
     updateNavigationMenu();
 
+    // START: Funding by Cause Pie Chart
+    // ----------------------------------
+    function renderFundingByCauseChart() {
+        const canvasElement = document.getElementById('fundingByCauseChart');
+        if (!canvasElement) {
+            // console.log('Canvas element for fundingByCauseChart not found. Chart not rendered.');
+            return;
+        }
+        const ctx = canvasElement.getContext('2d');
+
+        const data = {
+            labels: [
+                'Education',
+                'Healthcare',
+                'Environment',
+                'Livelihoods',
+                'Arts & Culture' // Changed 'Other' to something more specific for example
+            ],
+            datasets: [{
+                label: 'Funding Amount (₹)',
+                data: [1250000, 900000, 750000, 600000, 450000], // Adjusted sample amounts
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.8)',  // Red
+                    'rgba(54, 162, 235, 0.8)', // Blue
+                    'rgba(75, 192, 192, 0.8)', // Green
+                    'rgba(255, 206, 86, 0.8)', // Yellow
+                    'rgba(153, 102, 255, 0.8)' // Purple
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1.5
+            }]
+        };
+
+        const config = {
+            type: 'pie',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: true, // Keeps the aspect ratio of the chart
+                plugins: {
+                    legend: {
+                        position: 'top', // 'top', 'bottom', 'left', 'right', 'chartArea'
+                        labels: {
+                            padding: 20, // Padding between legend items
+                            font: {
+                                size: 14 // Font size for legend
+                            }
+                        }
+                    },
+                    title: {
+                        display: false, // Using the H3 in HTML for the title
+                        // text: 'Funding Distribution by Cause',
+                        // font: { size: 18 }
+                    },
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)', // Darker tooltip
+                        titleFont: { size: 14 },
+                        bodyFont: { size: 12 },
+                        padding: 10,
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0, maximumFractionDigits:0 }).format(context.parsed);
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                // Optional: Add onClick event for pie slices
+                // onClick: (event, elements) => {
+                //     if (elements.length > 0) {
+                //         const chartElement = elements[0];
+                //         const datasetIndex = chartElement.datasetIndex;
+                //         const index = chartElement.index;
+                //         const label = config.data.labels[index];
+                //         const value = config.data.datasets[datasetIndex].data[index];
+                //         console.log(`Clicked on: ${label} - Value: ${value}`);
+                //         // window.location.href = `/projects?cause=${label}`; // Example navigation
+                //     }
+                // }
+            }
+        };
+
+        try {
+            new Chart(ctx, config);
+        } catch (error) {
+            console.error('Error rendering Funding by Cause chart:', error);
+        }
+    }
+
+    // Call the function to render the chart
+    renderFundingByCauseChart();
+    // END: Funding by Cause Pie Chart
+
     console.log("ImpactX Bridge interactive scripts loaded.");
 });

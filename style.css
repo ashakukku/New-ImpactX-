@@ -1204,3 +1204,32 @@ section {
 */
 /* I will assume this @import is handled in the HTML head for better practice,
    but the font-family declarations will use these fonts. */
+
+
+/* Chart Widget Styles */
+#funding-overview-chart {
+    /* This section might get the default alternating background.
+       If a specific background is needed, define it here. */
+}
+
+.chart-widget-card {
+    background-color: #ffffff; /* White background for the card */
+    padding: 20px 25px;      /* Padding inside the card */
+    border-radius: 8px;      /* Rounded corners like other cards */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Consistent shadow */
+    margin-top: 20px;        /* Space above the card if section title is present */
+    text-align: center;      /* Center the title and chart by default */
+}
+
+.chart-widget-card h3 {
+    font-size: 1.5rem;       /* Adjust size as needed, consistent with other h3s */
+    color: #212121;          /* Standard heading color */
+    margin-bottom: 20px;     /* Space below the chart title */
+}
+
+.chart-container {
+    position: relative; /* Needed for Chart.js responsiveness */
+    margin: 0 auto;     /* Center the container if it's narrower than the card */
+    max-width: 500px;  /* Max width for a pie chart for readability, adjust as needed */
+                       /* Height will be determined by Chart.js aspect ratio or explicit height */
+}
