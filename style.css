@@ -1412,3 +1412,13 @@ section {
     box-shadow: 0 6px 15px rgba(0,0,0,0.12); /* Enhanced shadow */
 }
 /* --- END: Hover Effects for .join-column --- */
+
+/* Disclaimer Text Styling */
+.disclaimer-text {
+    font-size: 0.85em;         /* Slightly smaller than normal paragraph text */
+    font-style: italic;
+    color: #777777;           /* Muted gray color */
+    text-align: center;        /* Center align if it's a block element */
+    margin-top: -0.5em;      /* Adjust to pull it closer to the heading above */
+    margin-bottom: 1.5em;    /* Space before the content below (testimonial grid) */
+}
