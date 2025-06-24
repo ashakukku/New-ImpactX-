@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Call the function to render the chart
-    renderFundingByCauseChart();
+    // renderFundingByCauseChart(); // Commented out for now as per revised plan (Phase 1)
     // END: Funding by Cause Pie Chart
 
     console.log("ImpactX Bridge interactive scripts loaded.");
