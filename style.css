@@ -1233,3 +1233,69 @@ section {
     max-width: 500px;  /* Max width for a pie chart for readability, adjust as needed */
                        /* Height will be determined by Chart.js aspect ratio or explicit height */
 }
+
+
+/* Mock NGO Table Styles */
+.ngo-table-mvp {
+    margin-top: 30px; /* Space above the table section */
+    margin-bottom: 30px; /* Space below the table section */
+}
+
+.ngo-table-mvp h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.ngo-table-mvp p { /* The descriptive paragraph */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.table-responsive-container {
+    overflow-x: auto; /* Enable horizontal scroll on small screens */
+    background-color: #ffffff; /* White background for the table area */
+    padding: 15px;             /* Padding around the table if it scrolls */
+    border-radius: 8px;      /* Rounded corners for the container */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07); /* Subtle shadow */
+}
+
+.mock-ngo-table {
+    width: 100%;            /* Table takes full width of its container */
+    border-collapse: collapse; /* Clean borders */
+    font-size: 0.95em;       /* Slightly smaller font for table data */
+}
+
+.mock-ngo-table th,
+.mock-ngo-table td {
+    border: 1px solid #e0e0e0; /* Light gray borders for cells */
+    padding: 10px 12px;      /* Padding within cells */
+    text-align: left;        /* Align text to the left */
+    vertical-align: top;     /* Align content to the top of the cell */
+}
+
+.mock-ngo-table thead th {
+    background-color: #f5f5f5; /* Light gray background for header row */
+    font-weight: 600;          /* Bolder font for table headers */
+    color: #333;
+}
+
+.mock-ngo-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Slightly off-white for even rows (zebra striping) */
+}
+
+.mock-ngo-table tbody tr:hover {
+    background-color: #f0f0f0; /* Highlight row on hover */
+}
+
+/* Responsive considerations for the table itself if not relying solely on overflow */
+@media (max-width: 768px) {
+    .mock-ngo-table th,
+    .mock-ngo-table td {
+        font-size: 0.85em; /* Smaller font on mobile */
+        padding: 8px;
+    }
+    .ngo-table-mvp h2 {
+        font-size: 1.5rem; /* Adjust title size on mobile */
+    }
+}

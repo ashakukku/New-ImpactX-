@@ -76,7 +76,7 @@
             <ul id="main-menu">
                 <li><a href="index.html#dashboard-preview">Dashboard</a></li>
                 <li><a href="index.html#pilot">Pilot Program</a></li>
-                <li><a href="ngo-matchmaking.html" class="active">NGO Matchmaking</a></li>
+                <li><a href="ngo-matchmaking.html" class="active">CSR-NGO Matchmaking Tool</a></li>
                 <li><a href="about-us.html">About Us</a></li>
                 <li><a href="index.html#faq-on-index">FAQs</a></li>
                 <li><a href="index.html#contact">Contact Us</a></li>
@@ -116,6 +116,64 @@
                     </div>
                     <button type="submit" class="button">Filter NGOs</button>
                 </form>
+
+                <section id="funding-overview-chart-mvp" class="chart-section-matchmaking">
+                    <!-- This section now directly uses the parent .container -->
+                    <div class="chart-widget-card">
+                        <h3>Funding by Cause (Platform Example)</h3>
+                        <div class="chart-container">
+                            <canvas id="fundingByCauseChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="mock-ngo-table-section" class="ngo-table-mvp">
+                    <h2>Example NGO Listings</h2>
+                    <p><em>This is a sample table of NGOs to illustrate platform data. Actual results will vary based on filters.</em></p>
+                    <div class="table-responsive-container">
+                        <table class="mock-ngo-table">
+                            <thead>
+                                <tr>
+                                    <th>NGO Name</th>
+                                    <th>Primary Cause</th>
+                                    <th>Region</th>
+                                    <th>Status</th>
+                                    <th>Focus Snippet</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Green Sprouts Foundation</td>
+                                    <td>Environment</td>
+                                    <td>Kerala</td>
+                                    <td>Verified</td>
+                                    <td>Tree plantation and water conservation initiatives.</td>
+                                </tr>
+                                <tr>
+                                    <td>Educate Future Initiative</td>
+                                    <td>Education</td>
+                                    <td>Karnataka</td>
+                                    <td>Verified</td>
+                                    <td>Skill development programs for underprivileged youth.</td>
+                                </tr>
+                                <tr>
+                                    <td>HealthBridge Connect</td>
+                                    <td>Healthcare</td>
+                                    <td>Tamil Nadu</td>
+                                    <td>Verified</td>
+                                    <td>Operating mobile medical units for remote rural areas.</td>
+                                </tr>
+                                <tr>
+                                    <td>Empower Livelihoods Alliance</td>
+                                    <td>Livelihoods</td>
+                                    <td>Andhra Pradesh</td>
+                                    <td>Verified</td>
+                                    <td>Providing support and training for women micro-entrepreneurs.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
 
                 <div id="results-area">
                     <h2>Results</h2>
@@ -187,6 +245,7 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-CQBWl4fJHWbryGE+Pc7UAxWMUMNMWzWxFReQwTTgnMmedKx JButtons3B69GElc/QNGsQI5BEb0HIp5hWdysaiRmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
 </body>
 </html>
