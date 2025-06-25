@@ -284,5 +284,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // renderFundingByCauseChart(); // Commented out for now as per revised plan (Phase 1)
     // END: Funding by Cause Pie Chart
 
+    // START: Service Worker Registration
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => { // Use window.load to ensure page and resources are fully loaded
+            navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    console.log('Service Worker: Registered successfully with scope: ', registration.scope);
+                })
+                .catch((error) => {
+                    console.error('Service Worker: Registration failed: ', error);
+                });
+        });
+    } else {
+        console.log('Service Worker: Not supported by this browser.');
+    }
+    // END: Service Worker Registration
+
     console.log("ImpactX Bridge interactive scripts loaded.");
 });
