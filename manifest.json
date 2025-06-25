@@ -1,0 +1,24 @@
+{
+    "name": "ImpactX Bridge",
+    "short_name": "ImpactX",
+    "description": "Connecting CSR teams with high-impact grassroots NGOs in India. Faster, transparently, and measurably.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#D32F2F",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/logo.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
