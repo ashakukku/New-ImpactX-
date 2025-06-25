@@ -222,9 +222,9 @@ header .logo a {
 
 /* Styling for the logo image itself */
 .header-logo-img {
-    height: 40px; /* Increased from 30px, adjust as needed */
+    height: 60px; /* Increased to 60px */
     width: auto; /* Maintain aspect ratio */
-    margin-right: 8px; /* Space between logo image and text */
+    margin-right: 12px; /* Increased space between logo image and text */
     vertical-align: middle; /* Fallback if flex isn't enough, or for older browser interpretation */
 }
 
@@ -778,7 +778,7 @@ footer .copyright p {
 
     /* Adjust logo size for mobile */
     .header-logo-img {
-        height: 35px; /* Slightly smaller logo on mobile */
+        height: 50px; /* Adjusted for larger desktop logo */
     }
 
     /* Ensure the CTA button item in menu also behaves well on mobile */
