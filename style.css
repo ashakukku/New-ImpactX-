@@ -1463,3 +1463,33 @@ section {
     margin-top: -0.5em;      /* Adjust to pull it closer to the heading above */
     margin-bottom: 1.5em;    /* Space before the content below (testimonial grid) */
 }
+
+/* Chart Preview Images Layout */
+.chart-preview-images {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens if needed, though stacking is preferred */
+    justify-content: space-around; /* Distribute space around images */
+    gap: 20px; /* Space between images */
+    margin-top: 20px; /* Space above the image container */
+}
+
+.chart-preview-images img {
+    flex: 1 1 45%; /* Allow images to grow and shrink, aiming for roughly two per row */
+    max-width: 48%; /* Max width for each image to fit two with a gap */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners for images */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: subtle shadow */
+    object-fit: contain; /* Ensure entire image is visible, might add letterboxing if aspect ratios differ */
+}
+
+/* Responsive stacking for chart preview images */
+@media (max-width: 768px) {
+    .chart-preview-images {
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; /* Center stacked images */
+    }
+    .chart-preview-images img {
+        max-width: 90%; /* Allow images to take more width when stacked */
+        flex-basis: auto; /* Reset flex-basis for stacked layout */
+    }
+}
