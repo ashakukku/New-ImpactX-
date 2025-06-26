@@ -1493,3 +1493,10 @@ section {
         flex-basis: auto; /* Reset flex-basis for stacked layout */
     }
 }
+
+/* Ensure flex display for dashboard preview specifically, in case of conflict */
+/* This generally shouldn't be needed if specificity is managed well, but as a targeted fix: */
+#dashboard-preview .chart-preview-images {
+    display: flex; /* Re-asserting display flex */
+    /* Other properties like gap, justify-content should be inherited from the general .chart-preview-images rule */
+}
