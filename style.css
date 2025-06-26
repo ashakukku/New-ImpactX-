@@ -968,7 +968,7 @@ section:not(#hero) .container { /* Apply to sections that need centered content 
     }
     /* Footer columns on mobile */
     footer div {
-        /* text-align: center; /* Removed, as child flex container will handle its own alignment */
+        text-align: center; /* Ensure text-based content within footer divs is centered on mobile */
     }
     .social-media-links {
         display: flex; /* Ensure it's a flex container */
