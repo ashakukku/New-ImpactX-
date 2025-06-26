@@ -1494,32 +1494,11 @@ section {
     }
 }
 
-/* Comprehensive styling for dashboard preview images to ensure side-by-side layout */
-#dashboard-preview .chart-preview-images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-#dashboard-preview .chart-preview-images img {
-    flex: 1 1 45%;
-    max-width: 48%; /* Target for two images side-by-side */
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    object-fit: contain;
-}
-
-/* Mobile override for dashboard preview images */
-@media (max-width: 768px) {
-    #dashboard-preview .chart-preview-images {
-        flex-direction: column;
-        align-items: center;
-    }
-    #dashboard-preview .chart-preview-images img {
-        max-width: 90%;
-        flex-basis: auto;
-    }
-}
+/*
+    The specific rules for #dashboard-preview .chart-preview-images and its img child
+    have been removed. Both sections will now rely on the general .chart-preview-images
+    and .chart-preview-images img rules defined above.
+    The general .chart-preview-images img rule uses flex: 1 1 46%; and max-width: 49%;
+    The general .chart-preview-images rule defines display: flex; etc.
+    The general mobile overrides will also apply to both.
+*/
