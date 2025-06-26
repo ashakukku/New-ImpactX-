@@ -1474,8 +1474,8 @@ section {
 }
 
 .chart-preview-images img {
-    flex: 1 1 45%; /* Allow images to grow and shrink, aiming for roughly two per row */
-    max-width: 48%; /* Max width for each image to fit two with a gap */
+    flex: 1 1 46%; /* Slightly increased basis */
+    max-width: 49%; /* Slightly increased max-width */
     height: auto; /* Maintain aspect ratio */
     border-radius: 8px; /* Optional: rounded corners for images */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: subtle shadow */
@@ -1494,9 +1494,32 @@ section {
     }
 }
 
-/* Ensure flex display for dashboard preview specifically, in case of conflict */
-/* This generally shouldn't be needed if specificity is managed well, but as a targeted fix: */
+/* Comprehensive styling for dashboard preview images to ensure side-by-side layout */
 #dashboard-preview .chart-preview-images {
-    display: flex; /* Re-asserting display flex */
-    /* Other properties like gap, justify-content should be inherited from the general .chart-preview-images rule */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+#dashboard-preview .chart-preview-images img {
+    flex: 1 1 45%;
+    max-width: 48%; /* Target for two images side-by-side */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    object-fit: contain;
+}
+
+/* Mobile override for dashboard preview images */
+@media (max-width: 768px) {
+    #dashboard-preview .chart-preview-images {
+        flex-direction: column;
+        align-items: center;
+    }
+    #dashboard-preview .chart-preview-images img {
+        max-width: 90%;
+        flex-basis: auto;
+    }
 }
