@@ -1466,7 +1466,7 @@ section {
 
 /* Chart Preview Images Layout */
 .chart-preview-images {
-    display: flex;
+    display: flex !important; /* Added !important for diagnostics */
     flex-wrap: wrap; /* Allow wrapping on smaller screens if needed, though stacking is preferred */
     justify-content: space-around; /* Distribute space around images */
     gap: 20px; /* Space between images */
