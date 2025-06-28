@@ -1457,12 +1457,14 @@ section {
     flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
     gap: 20px;       /* Space between buttons */
 }
+/*
     font-style: italic;
-    color: #777777;           /* Muted gray color */
-    text-align: center;        /* Center align if it's a block element */
-    margin-top: -0.5em;      /* Adjust to pull it closer to the heading above */
-    margin-bottom: 1.5em;    /* Space before the content below (testimonial grid) */
+    color: #777777;
+    text-align: center;
+    margin-top: -0.5em;
+    margin-bottom: 1.5em;
 }
+*/
 
 /* Chart Preview Images Layout */
 .chart-preview-images {
