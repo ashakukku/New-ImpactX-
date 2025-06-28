@@ -972,7 +972,7 @@ section:not(#hero) .container { /* Apply to sections that need centered content 
     }
     .social-media-links {
         display: flex; /* Ensure it's a flex container */
-        justify-content: center; /* Centers the icons within this flex container */
+        justify-content: center !important; /* Added !important for diagnostics. Centers the icons within this flex container */
         width: 100%; /* Make the container take full width to allow centering of its items */
     }
 }
