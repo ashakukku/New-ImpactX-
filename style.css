@@ -486,6 +486,13 @@ footer .copyright p {
     }
 }
 
+/* Style for h4 titles in solution columns within the PAIP section */
+#what-is-paip .solution-column h4 {
+    color: #D32F2F; /* Red color for consistency */
+    text-align: center; /* Center align text */
+    margin-bottom: 15px; /* Consistent margin */
+}
+
 /* Mobile: Stack columns and adjust spacing */
 @media (max-width: 768px) {
     .solution-columns { /* General rule for all .solution-columns on mobile */
