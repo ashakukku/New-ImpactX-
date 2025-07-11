@@ -493,6 +493,11 @@ footer .copyright p {
     margin-bottom: 15px; /* Consistent margin */
 }
 
+/* Style for <strong> elements within the "Our Infrastructure Includes" list */
+#what-is-impactx ol li strong {
+    color: #D32F2F; /* Red color for emphasis */
+}
+
 /* Mobile: Stack columns and adjust spacing */
 @media (max-width: 768px) {
     .solution-columns { /* General rule for all .solution-columns on mobile */
