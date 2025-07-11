@@ -63,6 +63,26 @@ ul, ol {
     padding-left: 1.5em;
 }
 
+/* Assertive list styling for content sections to ensure markers are visible */
+section .container ul,
+section .container ol {
+    list-style-position: inside !important; /* Force position */
+    padding-left: 1.5em !important; /* Force padding */
+    list-style-type: revert !important; /* Try to force default markers */
+}
+
+/* Specifically for the 'Our Infrastructure Includes' ordered list */
+#what-is-impactx ol {
+    list-style-type: decimal !important; /* Ensure numbers */
+}
+
+/* Specifically for 'Who We Serve' and lists in PAIP section that are ULs */
+#what-is-impactx ul,
+#what-is-paip ul { /* This will also cover lists in .solution-column within #what-is-paip */
+    list-style-type: disc !important; /* Ensure bullets */
+}
+
+
 blockquote {
     border-left: 4px solid #D32F2F; /* Red accent for blockquote */
     padding-left: 1em;
