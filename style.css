@@ -63,25 +63,6 @@ ul, ol {
     padding-left: 1.5em;
 }
 
-/* Assertive list styling for content sections to ensure markers are visible */
-section .container ul,
-section .container ol {
-    list-style-position: inside !important; /* Force position */
-    padding-left: 1.5em !important; /* Force padding */
-    list-style-type: revert !important; /* Try to force default markers */
-}
-
-/* Specifically for the 'Our Infrastructure Includes' ordered list */
-#what-is-impactx ol {
-    list-style-type: decimal !important; /* Ensure numbers */
-}
-
-/* Specifically for 'Who We Serve' and lists in PAIP section that are ULs */
-#what-is-impactx ul,
-#what-is-paip ul { /* This will also cover lists in .solution-column within #what-is-paip */
-    list-style-type: disc !important; /* Ensure bullets */
-}
-
 
 blockquote {
     border-left: 4px solid #D32F2F; /* Red accent for blockquote */
@@ -516,6 +497,18 @@ footer .copyright p {
 /* Style for <strong> elements within the "Our Infrastructure Includes" list */
 #what-is-impactx ol li strong {
     color: #D32F2F; /* Red color for emphasis */
+}
+
+/* Ensure list styles for specific content sections */
+#what-is-impactx ol {
+    list-style-type: decimal; /* Ensure numbers */
+    /* padding-left should be inherited from global ul, ol or be re-stated if needed */
+}
+
+#what-is-impactx ul,
+#what-is-paip ul { /* This covers lists directly in #what-is-paip and within its .solution-column > ul */
+    list-style-type: disc;   /* Ensure bullets */
+    /* padding-left should be inherited */
 }
 
 /* Mobile: Stack columns and adjust spacing */
