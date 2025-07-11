@@ -480,7 +480,8 @@ footer .copyright p {
        For #pilot and #solution, we want two columns.
     */
     #solution .solution-columns,
-    #pilot .solution-columns {
+    #pilot .solution-columns,
+    #what-is-paip .solution-columns { /* Added #what-is-paip here */
         grid-template-columns: 1fr 1fr; /* Force two equal columns */
     }
 }
