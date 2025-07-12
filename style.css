@@ -1530,3 +1530,27 @@ section {
     The general .chart-preview-images rule defines display: flex; etc.
     The general mobile overrides will also apply to both.
 */
+
+/* Responsive Video Embed */
+#impactx-video-explainer {
+    text-align: center; /* Center the section title and video block */
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    max-width: 800px; /* Max width for the video, can be adjusted */
+    margin: 20px auto; /* Center the video wrapper if it's narrower than container */
+    background-color: #000; /* Optional: background for letterboxing if aspect ratio doesn't match perfectly */
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Ensure no iframe border from browser defaults */
+}
