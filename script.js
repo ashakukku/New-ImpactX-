@@ -300,5 +300,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // END: Service Worker Registration
 
+    // START: Back to Top Button
+    // -------------------------
+    const backToTopButton = document.getElementById("back-to-top-btn");
+
+    if (backToTopButton) {
+        // Show or hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Show button after scrolling 300px
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        // Smooth scroll to top on click
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent the default anchor link behavior
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    // END: Back to Top Button
+
     console.log("ImpactX Bridge interactive scripts loaded.");
 });
