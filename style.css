@@ -63,61 +63,52 @@ ul, ol {
     padding-left: 1.5em;
 }
 
-/* Assertive list styling for content sections to ensure markers are visible */
-section .container ul,
-section .container ol {
-    list-style-position: inside !important; /* Force position */
-    padding-left: 1.5em !important; /* Force padding */
-    list-style-type: revert !important; /* Try to force default markers */
-}
-
-/* Specifically for the 'Our Infrastructure Includes' ordered list */
-#what-is-impactx ol {
-    list-style-type: none !important; /* Neutralize for manual markers */
-}
-
-/* Specifically for 'Who We Serve' and lists in PAIP section that are ULs */
-#what-is-impactx ul,
-#what-is-paip ul { /* This will also cover lists in .solution-column within #what-is-paip */
-    list-style-type: none !important; /* Neutralize for manual markers */
-}
-
-/* Manual list markers for ULs */
-#what-is-impactx ul > li::before,
-#what-is-paip ul > li::before {
-    content: '•'; /* Bullet character */
-    color: #D32F2F; /* Brand red color */
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1.1em; /* Position in the padding area */
-    position: relative;
-    top: -0.05em; /* Minor vertical alignment tweak */
-}
-
-/* Manual list markers for OLs using CSS Counters */
-#what-is-impactx ol {
-    counter-reset: list-counter;
-}
-#what-is-impactx ol > li {
-    counter-increment: list-counter;
-}
-#what-is-impactx ol > li::before {
-    content: counter(list-counter) ".";
-    color: #D32F2F; /* Brand red color */
-    font-weight: bold;
-    display: inline-block;
-    width: 1.5em;
-    margin-left: -1.5em;
-}
-
-
 blockquote {
     border-left: 4px solid #D32F2F; /* Red accent for blockquote */
     padding-left: 1em;
     margin: 1.5em 0;
     font-style: italic;
     color: #555;
+}
+
+/* --- Global Manual List Styling for Content --- */
+/* 1. Neutralize all lists within content sections */
+section .container ul,
+section .container ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* 2. Give list items themselves the indentation */
+section .container li {
+    padding-left: 1.5em; /* Indent the text */
+    position: relative; /* Needed for positioning the marker */
+}
+
+/* 3. Add manual markers for all ULs in content */
+section .container ul > li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #D32F2F;
+    font-weight: bold;
+}
+
+/* 4. Add manual markers for all OLs in content */
+section .container ol {
+    counter-reset: list-counter;
+}
+section .container ol > li {
+    counter-increment: list-counter;
+}
+section .container ol > li::before {
+    content: counter(list-counter) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #D32F2F;
+    font-weight: bold;
 }
 
 /* Utility Classes */
