@@ -73,13 +73,42 @@ section .container ol {
 
 /* Specifically for the 'Our Infrastructure Includes' ordered list */
 #what-is-impactx ol {
-    list-style-type: decimal !important; /* Ensure numbers */
+    list-style-type: none !important; /* Neutralize for manual markers */
 }
 
 /* Specifically for 'Who We Serve' and lists in PAIP section that are ULs */
 #what-is-impactx ul,
 #what-is-paip ul { /* This will also cover lists in .solution-column within #what-is-paip */
-    list-style-type: disc !important; /* Ensure bullets */
+    list-style-type: none !important; /* Neutralize for manual markers */
+}
+
+/* Manual list markers for ULs */
+#what-is-impactx ul > li::before,
+#what-is-paip ul > li::before {
+    content: '•'; /* Bullet character */
+    color: #D32F2F; /* Brand red color */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.1em; /* Position in the padding area */
+    position: relative;
+    top: -0.05em; /* Minor vertical alignment tweak */
+}
+
+/* Manual list markers for OLs using CSS Counters */
+#what-is-impactx ol {
+    counter-reset: list-counter;
+}
+#what-is-impactx ol > li {
+    counter-increment: list-counter;
+}
+#what-is-impactx ol > li::before {
+    content: counter(list-counter) ".";
+    color: #D32F2F; /* Brand red color */
+    font-weight: bold;
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -1.5em;
 }
 
 
