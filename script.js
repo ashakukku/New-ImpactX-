@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Utility function to check if an element is in the viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const mainMenu = document.getElementById('main-menu');
@@ -324,6 +335,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     // END: Back to Top Button
+
+    // Animate numbers on scroll
+    function animateNumbers() {
+        const statNumbers = document.querySelectorAll('.stat-number');
+        statNumbers.forEach(statNumber => {
+            const target = +statNumber.getAttribute('data-target');
+            const duration = 2000; // 2 seconds
+            const stepTime = Math.abs(Math.floor(duration / target));
+            let current = 0;
+            const timer = setInterval(() => {
+                current += 1;
+                statNumber.innerText = current;
+                if (current == target) {
+                    clearInterval(timer);
+                    if (statNumber.getAttribute('data-target') === '25') {
+                        statNumber.innerText += '-50 Lakhs';
+                    } else if (statNumber.getAttribute('data-target') === '15') {
+                        statNumber.innerText += '+ NGOs';
+                    } else if (statNumber.getAttribute('data-target') === '3') {
+                        statNumber.innerText += '+ Corporate Partners';
+                    }
+                }
+            }, stepTime);
+        });
+    }
+
+    let numbersAnimated = false;
+    window.addEventListener('scroll', () => {
+        const statsSection = document.getElementById('pilot-metrics');
+        if (statsSection && isInViewport(statsSection) && !numbersAnimated) {
+            animateNumbers();
+            numbersAnimated = true;
+        }
+
+        // Section fade-in on scroll
+        document.querySelectorAll('section').forEach(section => {
+            if (isInViewport(section)) {
+                section.classList.add('visible');
+            }
+        });
+    });
 
     console.log("ImpactX Bridge interactive scripts loaded.");
 });

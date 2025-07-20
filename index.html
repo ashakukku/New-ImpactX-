@@ -96,11 +96,11 @@
     <main>
         <section id="hero">
             <!-- Content of Hero is full width by design, but text centered by CSS -->
-            <h1>Simplifying CSR funding to verified NGOs</h1>
-            <p>A full-stack platform to discover, fund, and report grassroots impact - with real-time fund tracking, Al-powered trust layers, and compliance automation.</p>
+            <h1>India’s Full-Stack OS for Social Impact</h1>
+            <p>A unified platform for CSR teams and NGOs to discover, fund, and scale high-trust partnerships. Welcome to the future of Indian philanthropy.</p>
             <div>
-                <a href="#ready-to-join" class="button">Apply as NGO</a>
-                <a href="#ready-to-join" class="button">Apply as CSR Partner</a>
+                <a href="#ready-to-join" class="button">Join as an NGO</a>
+                <a href="#ready-to-join" class="button">Partner as a CSR Team</a>
             </div>
         </section>
 
@@ -110,16 +110,16 @@
                 <p>Targeting ₹25–50 lakhs in CSR fund disbursal during our Kerala pilot — bridging 15+ NGOs with 3+ corporate partners.</p>
                 <div class="stats-container">
                     <div class="stat-card">
-                        <h3>₹25-50 Lakhs</h3>
-                        <p>Target CSR Fund Disbursal</p>
+                        <h3 class="stat-number" data-target="25">0</h3>
+                        <p>Target CSR Fund Disbursal (in Lakhs)</p>
                     </div>
                     <div class="stat-card">
-                        <h3>15+ NGOs</h3>
-                        <p>To Be Bridged</p>
+                        <h3 class="stat-number" data-target="15">0</h3>
+                        <p>To Be Bridged (NGOs)</p>
                     </div>
                     <div class="stat-card">
-                        <h3>3+ Corporate Partners</h3>
-                        <p>To Be Onboarded</p>
+                        <h3 class="stat-number" data-target="3">0</h3>
+                        <p>To Be Onboarded (Corporate Partners)</p>
                     </div>
                 </div>
             </div>
@@ -230,9 +230,8 @@
 
         <section id="dashboard-preview">
             <div class="container">
-                <h2>Dashboard</h2>
-                <!-- Placeholder for dashboard visual representation -->
-                <p><em>A visual mock-up of the dashboard would appear here, showcasing features like Project Status, Funding by Cause, Impact Over Time, and NGO Activities.</em></p>
+                <h2>Your Mission Control for Social Impact</h2>
+                <p>Our unified dashboard provides a real-time, 360-degree view of your CSR initiatives. Track funding, monitor project milestones, and measure impact with intuitive, data-rich visualizations. Make informed decisions, faster.</p>
                 <div class="chart-preview-images">
                     <img src="/dashboard.jpg" alt="Chart preview illustrating general CSR trends in India on the ImpactX Bridge dashboard.">
                     <img src="/dashboard1.jpg" alt="Additional chart preview from the ImpactX Bridge dashboard showcasing CSR data in India.">
@@ -253,6 +252,21 @@
                     <li>AI/ML tools for intelligent matching, compliance risk scoring, real-time feedback coming soon</li>
                 </ul>
                 <blockquote>“This isn’t just a marketplace. It’s the operating system for compliant, high-trust CSR.”</blockquote>
+            </div>
+        </section>
+
+        <section id="tech-stack">
+            <div class="container">
+                <h2>Built for Trust & Scale</h2>
+                <p>Our platform is engineered with a modern, secure, and scalable technology stack to ensure reliability and a seamless user experience. We leverage the best of open-source and proprietary technologies to build a robust infrastructure for social impact.</p>
+                <div class="tech-icons">
+                    <div class="tech-icon"><i class="fab fa-python"></i><span>Python</span></div>
+                    <div class="tech-icon"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
+                    <div class="tech-icon"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                    <div class="tech-icon"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                    <div class="tech-icon"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+                    <div class="tech-icon"><i class="fab fa-docker"></i><span>Docker</span></div>
+                </div>
             </div>
         </section>
 
@@ -302,22 +316,44 @@
         <section id="how-it-works">
             <div class="container">
                 <h2>How It Works</h2>
-                <ol>
-                    <li>
-                        <h3>Onboard & verify in 3–5 days</h3>
-                        <p>Quick and streamlined verification process.</p>
-                    </li>
-                    <li>
-                        <h3>Matchmaking → funds disbursed → impact captured</h3>
-                        <p>Intelligent matching leads to efficient funding and transparent reporting.</p>
-                    </li>
-                    <li>
-                        <h3>Submit interest (CSR or NGO)</h3>
-                        <p>Easy forms to express interest and join our growing network.</p>
-                    </li>
-                </ol>
-                <div class="workflow-graphic">
-                    <p>🌍 → 👥 NGO verification → 🔍 Smart matchmaking → 💸 Fund disbursal → 📈 Impact reporting</p>
+                <div class="how-it-works-flex-container">
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <h3>1. Onboard & Verify</h3>
+                        <p>NGOs and CSR partners complete a streamlined onboarding process. We verify profiles in 3-5 days, ensuring credibility and compliance from the start.</p>
+                    </div>
+                    <div class="step-connector">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-search-dollar"></i>
+                        </div>
+                        <h3>2. Discover & Match</h3>
+                        <p>CSR teams discover vetted NGOs through smart filters. Our upcoming AI-powered tool will provide tailored matchmaking based on cause, region, and impact goals.</p>
+                    </div>
+                    <div class="step-connector">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3>3. Fund & Track</h3>
+                        <p>Corporates fund projects through transparent, milestone-based disbursals. Both partners track fund utilization and progress in real-time on their dashboards.</p>
+                    </div>
+                    <div class="step-connector">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>4. Report & Scale</h3>
+                        <p>NGOs submit structured impact reports on the platform. CSR teams receive audit-friendly data to measure ROI and scale successful partnerships.</p>
+                    </div>
                 </div>
                 <blockquote>“We handle the friction — so you can focus on impact.”</blockquote>
             </div>
