@@ -14,7 +14,7 @@ html {
 
 body {
     font-family: 'Open Sans', sans-serif; /* Modern, readable sans-serif */
-    line-height: 1.6;
+    line-height: 1.7;
     color: #333333; /* Dark gray for text - good base */
     background-color: #ffffff; /* White background as primary */
     display: flex;
@@ -124,20 +124,22 @@ section:not(#how-it-works) .container ol > li::before {
 .button {
     display: inline-block;
     padding: 12px 25px; /* Slightly larger padding */
-    background-color: #D32F2F; /* Red for primary buttons */
+    background-color: #D32F2F; /* Fallback color */
+    background-image: linear-gradient(to bottom, #D93A3A, #C72424); /* From slightly lighter to slightly darker red */
     color: #ffffff;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px; /* Softer radius */
     font-weight: 700; /* Bolder font weight */
     text-align: center;
     text-transform: uppercase; /* Uppercase text for more impact */
     letter-spacing: 0.5px; /* Slight letter spacing */
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease; /* Transition all properties */
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* Subtle shadow */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1); /* Add subtle inner highlight */
 }
 
 .button:hover {
+    background-image: none; /* Remove gradient on hover for a flatter effect */
     background-color: #B71C1C; /* Darker Red for hover */
     text-decoration: none;
     color: #ffffff;
@@ -176,7 +178,7 @@ section:not(#how-it-works) .container ol > li::before {
     background-color: #ffffff; /* White card on potentially gray section bg */
     padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 8px rgba(0,0,0,0.08);
     text-align: left;
     border-left: 5px solid #D32F2F; /* Red accent border */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added for hover effect */
@@ -340,7 +342,7 @@ header nav ul li.menu-cta-button-item a.button {
 
 /* Sections Basic Styling */
 section {
-    padding: 40px 0;
+    padding: 60px 0;
 }
 
 /* Alternating section backgrounds for contrast */
@@ -465,7 +467,7 @@ footer .copyright p {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 8px rgba(0,0,0,0.08);
     flex: 1;
     min-width: 250px; /* Ensure cards are readable */
     text-align: center;
@@ -504,7 +506,7 @@ footer .copyright p {
     background-color: #ffffff;
     padding: 25px; /* Default padding, slightly reduced for better mobile fit */
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 8px rgba(0,0,0,0.08);
     text-align: left;
     min-width: 0; /* Allows columns to shrink properly in a grid */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added for hover effect */
@@ -625,7 +627,7 @@ footer .copyright p {
     background-color: #f5f5f5; /* Light Gray for join column background */
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 8px rgba(0,0,0,0.08);
     flex: 1;
     min-width: 300px;
     text-align: center;
