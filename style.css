@@ -425,7 +425,7 @@ footer .copyright p {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    padding: 60px 20px; /* Keep padding for content spacing */
+    padding: 100px 20px; /* Increased padding */
     text-align: center;
     position: relative; /* For potential overlay later */
 }
@@ -433,12 +433,13 @@ footer .copyright p {
 #hero h1 {
     color: #ffffff; /* Changed to white for better contrast on banner */
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Added subtle shadow for readability */
+    font-size: 3rem; /* Increased font size */
 }
 
 #hero p {
     color: #FFFFFF; /* White text */
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* 1px black outline */
-    font-size: 1.1rem;
+    font-size: 1.2rem; /* Increased font size */
     margin-bottom: 30px;
     max-width: 700px;
     margin-left: auto;
@@ -447,6 +448,19 @@ footer .copyright p {
 
 #hero .button {
     margin: 0 10px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 #pilot-metrics {
@@ -469,12 +483,13 @@ footer .copyright p {
     flex: 1;
     min-width: 250px; /* Ensure cards are readable */
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added for hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 #pilot-metrics .stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    background-color: #fce4ec;
 }
 
 #pilot-metrics .stat-card h3 {
@@ -564,53 +579,96 @@ footer .copyright p {
     margin-bottom: 10px;
 }
 
-#how-it-works ol {
-    list-style: none;
-    counter-reset: steps-counter;
-    padding-left: 0;
+.how-it-works-flex-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligns items to the top */
+    gap: 20px; /* Space between cards and connectors */
 }
 
-#how-it-works ol li {
-    counter-increment: steps-counter;
-    margin-bottom: 20px;
-    padding: 20px;
-    background: #fff;
+.step-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    position: relative;
-    flex-basis: calc(33.333% - 20px); /* Three columns with gap */
-    margin: 10px;
+    padding: 20px;
     text-align: center;
+    flex-basis: 23%; /* Each card takes up roughly a quarter of the space */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 220px; /* Give a consistent height */
 }
 
-#how-it-works ol li::before {
-    content: counter(steps-counter);
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #D32F2F; /* Red for step numbers */
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    text-align: center;
-    line-height: 40px;
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.step-icon {
+    font-size: 2.5rem; /* Larger icon */
+    color: #D32F2F; /* Brand red color */
     margin-bottom: 15px;
+    /* Background circle for icon */
+    background-color: #fce4ec; /* A very light pink/red */
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#how-it-works ol li h3 {
-    margin-top: 0;
-    font-size: 1.25rem;
+.step-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #212121;
 }
 
-#how-it-works .workflow-graphic { /* Placeholder for actual graphic */
-    text-align: center;
-    font-size: 1.5rem;
-    margin: 20px 0;
-    color: #D32F2F; /* Red for workflow graphic text */
+.step-card p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #555;
+}
+
+.step-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    color: #D32F2F;
+    font-size: 2rem;
+    padding-top: 70px; /* Align with the middle of the cards */
+}
+
+/* Responsive adjustments for the "How it Works" section */
+@media (max-width: 992px) {
+    .how-it-works-flex-container {
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: center; /* Center items when they wrap */
+    }
+    .step-card {
+        flex-basis: 45%; /* Two cards per row on tablets */
+        margin-bottom: 20px;
+    }
+    .step-connector {
+        display: none; /* Hide arrows on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    #how-it-works {
+        text-align: center; /* Center the main h2 on mobile */
+    }
+    .how-it-works-flex-container {
+        flex-direction: column; /* Stack vertically on mobile */
+        align-items: center; /* Center the stacked cards */
+    }
+    .step-card {
+        flex-basis: 80%; /* Allow card to be wide on mobile */
+        max-width: 400px; /* But not too wide */
+    }
 }
 
 #ready-to-join .join-columns {
@@ -1586,6 +1644,55 @@ section {
     text-decoration: none;
 }
 
+
+/* Section fade-in animation */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tech Stack Section */
+#tech-stack {
+    text-align: center;
+}
+
+.tech-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.tech-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+    width: 100px;
+}
+
+.tech-icon i {
+    font-size: 3rem;
+    color: #D32F2F;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.tech-icon:hover i {
+    transform: scale(1.1);
+}
+
+.tech-icon span {
+    font-weight: 600;
+    color: #333;
+}
 
 /* Responsive Video Embed */
 #impactx-video-explainer {
