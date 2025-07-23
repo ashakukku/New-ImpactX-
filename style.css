@@ -989,7 +989,7 @@ section > .container,
 /* Adjusting sections to use the .container correctly */
 /* Remove padding from section if .container inside handles it */
 section {
-    padding: 40px 0; /* Vertical padding on section */
+    padding: 60px 0; /* Vertical padding on section */
 }
 /* The .container inside section will handle horizontal padding/centering */
 /* Example for hero if it has a full-width background but centered content */
