@@ -377,34 +377,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // NGO Matchmaking Filter
-    const filterForm = document.getElementById('filter-form');
-    if (filterForm) {
-        filterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const cause = document.getElementById('cause').value;
-            const region = document.getElementById('region').value;
-            const results = document.querySelectorAll('#results-area .ngo-card');
-            const resultsSummary = document.querySelector('#results-area .results-summary');
-            let visibleCount = 0;
-
-            results.forEach(card => {
-                const cardCause = card.querySelector('p:nth-of-type(1)').innerText.split(': ')[1].toLowerCase();
-                const cardRegion = card.querySelector('p:nth-of-type(2)').innerText.split(': ')[1].toLowerCase();
-
-                const causeMatch = (cause === '' || cardCause.includes(cause));
-                const regionMatch = (region === '' || cardRegion.includes(region));
-
-                if (causeMatch && regionMatch) {
-                    card.style.display = 'block';
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            resultsSummary.innerText = `Showing ${visibleCount} NGOs.`;
-        });
-    }
-
     console.log("ImpactX Bridge interactive scripts loaded.");
 });
