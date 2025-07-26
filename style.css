@@ -113,6 +113,48 @@ section:not(#how-it-works) .container ol > li::before {
     width: 1.5em; /* Give number space to not overlap text */
 }
 
+/* --- Global Manual List Styling for Content (Excluding #how-it-works) --- */
+/* 1. Neutralize all lists within content sections */
+section:not(#how-it-works) .container ul,
+section:not(#how-it-works) .container ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* 2. Give list items themselves the indentation */
+section:not(#how-it-works) .container li {
+    padding-left: 1.5em; /* Indent the text */
+    position: relative; /* Needed for positioning the marker */
+    margin-bottom: 0.5em; /* Add some space between list items */
+}
+
+/* 3. Add manual markers for all ULs in content */
+section:not(#how-it-works) .container ul > li::before {
+    content: '•';
+    position: absolute;
+    left: 0.2em; /* Give a little space from the edge */
+    top: 0;
+    color: #D32F2F;
+    font-weight: bold;
+}
+
+/* 4. Add manual markers for all OLs in content */
+section:not(#how-it-works) .container ol {
+    counter-reset: list-counter;
+}
+section:not(#how-it-works) .container ol > li {
+    counter-increment: list-counter;
+}
+section:not(#how-it-works) .container ol > li::before {
+    content: counter(list-counter) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #D32F2F;
+    font-weight: bold;
+    width: 1.5em; /* Give number space to not overlap text */
+}
+
 /* Utility Classes */
 .container {
     width: 90%;
