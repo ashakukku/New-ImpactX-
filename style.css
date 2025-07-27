@@ -1717,3 +1717,7 @@ section.visible {
     height: 100%;
     border: 0; /* Ensure no iframe border from browser defaults */
 }
+
+.tool-name {
+    color: #D32F2F;
+}
