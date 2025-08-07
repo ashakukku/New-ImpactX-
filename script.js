@@ -302,5 +302,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }, stepTime);
     }
 
+    // START: FOUC Prevention
+    // Remove the page-loading class from the body once all resources are loaded
+    window.onload = () => {
+        document.body.classList.remove('page-loading');
+    };
+    // END: FOUC Prevention
+
     console.log("ImpactX Bridge interactive scripts loaded.");
 });

@@ -68,6 +68,10 @@
 
     <!-- Critical CSS to prevent Flash of Unstyled Content (FOUC) -->
     <style>
+      .page-loading #dashboard-preview,
+      .page-loading #impactx-video-explainer {
+        visibility: hidden;
+      }
       .chart-preview-images { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
       .video-wrapper { max-width: 800px; margin: 20px auto; }
     </style>
@@ -76,6 +80,7 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <script>document.body.classList.add('page-loading');</script>
     <header>
         <nav> <!-- This nav is the direct child of header, acts as a container -->
             <div class="logo">
