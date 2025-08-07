@@ -1781,6 +1781,17 @@ section.visible {
 
 .recognition-item h3 {
     font-size: 1.75rem;
-    color: #333;
     margin: 0;
+}
+
+.startup-india {
+    color: #FF9933; /* Saffron */
+}
+
+.dippt {
+    color: #138808; /* Green */
+}
+
+.msme {
+    color: #000080; /* Navy Blue */
 }
