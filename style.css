@@ -1791,3 +1791,58 @@ section.visible {
     height: 100%;
     border: 0; /* Ensure no iframe border from browser defaults */
 }
+
+/* Officially Recognised by Section */
+#officially-recognised-by {
+    background-color: #f5f5f5;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.logo-scroll-container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.logo-scroll-container:before,
+.logo-scroll-container:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    z-index: 2;
+}
+
+.logo-scroll-container:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(245, 245, 245, 0), #f5f5f5);
+}
+
+.logo-scroll-container:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(245, 245, 245, 0), #f5f5f5);
+}
+
+.logo-scroll-container .logos {
+    display: flex;
+    animation: scroll 30s linear infinite;
+}
+
+.logo-scroll-container img {
+    height: 60px;
+    margin: 0 40px;
+    transition: all 0.3s ease;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
