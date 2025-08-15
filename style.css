@@ -71,6 +71,14 @@ blockquote {
     color: #555;
 }
 
+.text-red {
+    color: #D32F2F; /* Brand red */
+}
+
+.text-green {
+    color: #2E7D32; /* A nice shade of green */
+}
+
 /* --- Global Manual List Styling for Content (Excluding #how-it-works) --- */
 /* 1. Neutralize all lists within content sections */
 section:not(#how-it-works) .container ul,
