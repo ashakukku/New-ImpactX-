@@ -1829,7 +1829,7 @@ section.visible {
 
 .logo-scroll-container .logos {
     display: flex;
-    animation: scroll 30s linear infinite;
+    animation: scroll 15s linear infinite;
 }
 
 .logo-scroll-container img {
